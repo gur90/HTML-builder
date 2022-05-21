@@ -1,6 +1,8 @@
+
 const fs = require('fs')
 const path = require('path')
 const fsPromises = fs.promises;
+function copyDir() {
 fsPromises.mkdir(path.join(__dirname,'files-copy'), {recursive:true} ).then( function () {
     console.log( 'Directory created successfully' );
     }). catch ( function () {
@@ -17,3 +19,5 @@ fs.readdir(path.join(__dirname,'files'), (err, filess)=> {
         })
     })
 })
+}
+copyDir()
