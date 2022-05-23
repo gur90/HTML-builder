@@ -4,6 +4,7 @@ const path = require('path')
 const bundle= path.join(__dirname, 'project-dist','bundle.css')
 const styles =path.join(__dirname, 'styles')
 async function style(){
+    
             const files = await fs.readdir(styles, {
                 withFileTypes:true
             })
@@ -15,6 +16,7 @@ async function style(){
                     arr.push(reading.toString())
                     }         
                 await fs.writeFile(bundle, arr.join('\n'))
-    }
+   
+}
 style()
  
